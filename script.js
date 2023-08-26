@@ -216,3 +216,63 @@ function slide2(){
   });
 }
 slide2()
+
+function slidethird() {
+  var clutter = "";
+  var imgPop = document.querySelector("#imgpop");
+  
+  document.querySelectorAll(".slides:nth-child(3) img").forEach(function (elem) {
+    elem.addEventListener("click", function () {
+      console.log(elem.getAttribute("data-img"));
+      imgPop.style.display = "flex"
+      // document.querySelector("#main").style.pointerEvents = "none"
+      clutter = `  <div class="cent" style="background-image: url(${elem.getAttribute("data-img")});">
+      <div id="cross">
+        <i class="ri-close-circle-fill"></i>
+      </div>
+      <div class="cover" >
+        <h1>${elem.getAttribute("data-name")}</h1>
+        <p>${elem.getAttribute("data-p")}</p>
+        <button>
+          <a href='${elem.getAttribute("data-link")}'>View Details
+            <img src="./assests/trending_flat_FILL0_wght400_GRAD0_opsz48.png" alt="">
+            <img id="leftwhite" src="./assests/right.svg" alt="">
+          </a>
+        </button>
+      </div>
+    </div>`;
+
+      imgPop.innerHTML = clutter;
+      
+      // Add an event listener to the "cross" element to close the container
+      var cross = document.querySelector("#cross");
+      cross.addEventListener("click", function () {
+        imgPop.style.display = "none";
+      // document.querySelector("#main").style.pointerEvents = "all"
+
+      });
+    });
+  });
+
+
+  var swiper6 = new Swiper(".swiper-6", {
+    grabCursor: true,
+    effect: "creative",
+    loop:true,
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        origin: "left center",
+        translate: ["-5%", 0, -200],
+        rotate: [0, 100, 0],
+      },
+      next: {
+        origin: "right center",
+        translate: ["5%", 0, -200],
+        rotate: [0, -100, 0],
+      },
+    },
+  });
+}
+
+slidethird();
