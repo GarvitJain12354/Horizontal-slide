@@ -1219,7 +1219,7 @@ button::after {
 
     font-size: 1.5rem;
 
-    width: 100%;
+    width: 25rem;
     transform: translate(-50%, 0%);
     text-align: center;
     white-space: wrap;
