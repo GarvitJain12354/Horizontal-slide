@@ -1230,9 +1230,7 @@ button::after {
     transform: translate(-50%, 0%);
     text-align: center;
     white-space: wrap;
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
+    
   }
   .slides:nth-child(1) {
     align-items: flex-start !important;
