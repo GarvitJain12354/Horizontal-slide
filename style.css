@@ -451,13 +451,18 @@ button:hover a {
 }
 .slides:nth-child(3) {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   /* background-color: green; */
   gap: 1rem;
   padding: 0 2rem;
   /* padding: 1rem; */
 }
-.slides:nth-child(3)>img {
+.slides:nth-child(3)  .col8{
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+.slides:nth-child(3) .col8 img {
   height: 15vw;
   width: 10vw;
   /* background-color: red; */
@@ -852,8 +857,8 @@ button::after {
 }
 #cross {
   position: absolute;
-  top: -12%;
-  right: -100%;
+  top: -2rem;
+  right: -10rem;
   height: 3vw;
   width: 3vw;
   display: flex;
@@ -878,6 +883,9 @@ button::after {
   opacity: 0;
   /* display: none; */
   position: absolute
+}
+.slidemob{
+  display: none;
 }
 @media only screen and (width: 1024px) {
   .s1 .black-box {
@@ -1386,12 +1394,19 @@ button::after {
     display: none;
   }
   .slidemob {
-    height: 40rem;
+    height: 20rem;
     width: 90%;
     /* background-color: red; */
     position: relative;
     z-index: 9999;
+  display: initial;
   
+  }
+  .slides:nth-child(3){
+    min-height: 80rem;
+  }
+  .col8{
+    display: none !important;
   }
   .slidemob .swiper {
     /* margin: 100px auto; */

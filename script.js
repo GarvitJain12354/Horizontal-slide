@@ -273,6 +273,42 @@ function slidethird() {
       },
     },
   });
+  var swiper7 = new Swiper(".swiper-7", {
+    grabCursor: true,
+    effect: "creative",
+    loop:true,
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        origin: "left center",
+        translate: ["-5%", 0, -200],
+        rotate: [0, 100, 0],
+      },
+      next: {
+        origin: "right center",
+        translate: ["5%", 0, -200],
+        rotate: [0, -100, 0],
+      },
+    },
+  });
+  var swiper8 = new Swiper(".swiper-8", {
+    grabCursor: true,
+    effect: "creative",
+    loop:true,
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        origin: "left center",
+        translate: ["-5%", 0, -200],
+        rotate: [0, 100, 0],
+      },
+      next: {
+        origin: "right center",
+        translate: ["5%", 0, -200],
+        rotate: [0, -100, 0],
+      },
+    },
+  });
 }
 
 slidethird();
