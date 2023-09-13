@@ -887,6 +887,9 @@ button::after {
 .slidemob{
   display: none;
 }
+.slides:nth-child(3)>h1{
+  display: none;
+}
 @media only screen and (width: 1024px) {
   .s1 .black-box {
     height: 50%;
@@ -1235,7 +1238,7 @@ button::after {
     bottom: 10%;
     left: 50%;
     transform: translate(-50%,0%);
-    text-align: center;
+    text-align: left;
    }
   .slides:nth-child(1) {
     align-items: flex-start !important;
@@ -1394,16 +1397,38 @@ button::after {
     display: none;
   }
   .slidemob {
-    height: 20rem;
-    width: 90%;
+    height: 23rem;
+    width: 100%;
     /* background-color: red; */
     position: relative;
     z-index: 9999;
   display: initial;
   
   }
+  .blackfotter{
+    height: 25rem;
+  }
   .slides:nth-child(3){
-    min-height: 80rem;
+    min-height:100rem;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  .slides:nth-child(3)>h1{
+    text-align: center;
+    font-size: 3.5rem;
+    display: flex;
+  }
+  .swiper-button-next, .swiper-rtl .swiper-button-prev{
+    color: black;
+  }
+  .swiper-button-prev, .swiper-rtl .swiper-button-next{
+    color: black;
+  }
+  .swiper-8 .swiper-button-next, .swiper-rtl .swiper-button-prev{
+    color: white;
+  }
+  .swiper-8 .swiper-button-prev, .swiper-rtl .swiper-button-next{
+    color:white;
   }
   .col8{
     display: none !important;

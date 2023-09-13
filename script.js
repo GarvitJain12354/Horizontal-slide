@@ -257,8 +257,12 @@ function slidethird() {
 
   var swiper6 = new Swiper(".swiper-6", {
     grabCursor: true,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-6 .swiper-button-next",
+      prevEl: ".swiper-6 .swiper-button-prev",
+    },
     effect: "creative",
-    loop:true,
     creativeEffect: {
       prev: {
         shadow: true,
@@ -273,10 +277,15 @@ function slidethird() {
       },
     },
   });
+  
   var swiper7 = new Swiper(".swiper-7", {
     grabCursor: true,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-7 .swiper-button-next",
+      prevEl: ".swiper-7 .swiper-button-prev",
+    },
     effect: "creative",
-    loop:true,
     creativeEffect: {
       prev: {
         shadow: true,
@@ -293,8 +302,12 @@ function slidethird() {
   });
   var swiper8 = new Swiper(".swiper-8", {
     grabCursor: true,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-8 .swiper-button-next",
+      prevEl: ".swiper-8 .swiper-button-prev",
+    },
     effect: "creative",
-    loop:true,
     creativeEffect: {
       prev: {
         shadow: true,
