@@ -1,4 +1,4 @@
-if (window.innerWidth >= 768) {
+if (window.innerWidth >= 991) {
   gsap.registerPlugin(ScrollTrigger);
 
   // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
@@ -42,53 +42,53 @@ if (window.innerWidth >= 768) {
   })
 
 } 
-if (window.innerWidth === 1024) {
-  var tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".slides:nth-child(5) ",
-      scrub: 3,
-      start: "105% 0%",
-      end: "120% 0%",
-      scroller: "#main",
+// if (window.innerWidth === 1024) {
+//   var tl = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".slides:nth-child(5) ",
+//       scrub: 3,
+//       start: "105% 0%",
+//       end: "120% 0%",
+//       scroller: "#main",
 
-    }
-  });
+//     }
+//   });
 
-  tl.from(".sidebar", {
-      opacity: 0
-    })
-    .from(".sidebar h1, .elem", {
-      x: 600,
-      stagger: 1,
-      ease: "expo.ease"
-    })
-    .from(".box", {
-      opacity: 0
-    });
-} else if (window.innerWidth > 1024) {
-  var tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".slides:nth-child(5) ",
-      scrub: 3,
-      start: "180% 0%",
-      end: "200% 0%",
-      scroller: "#main",
+//   tl.from(".sidebar", {
+//       opacity: 0
+//     })
+//     .from(".sidebar h1, .elem", {
+//       x: 600,
+//       stagger: 1,
+//       ease: "expo.ease"
+//     })
+//     .from(".box", {
+//       opacity: 0
+//     });
+// } else if (window.innerWidth > 1024) {
+//   var tl = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".slides:nth-child(5) ",
+//       scrub: 3,
+//       start: "180% 0%",
+//       end: "200% 0%",
+//       scroller: "#main",
 
-    }
-  });
+//     }
+//   });
 
-  tl.from(".sidebar", {
-      opacity: 0
-    })
-    .from(".sidebar h1, .elem", {
-      x: 600,
-      stagger: 1,
-      ease: "expo.ease"
-    })
-    .from(".box", {
-      opacity: 0
-    });
-}
+//   tl.from(".sidebar", {
+//       opacity: 0
+//     })
+//     .from(".sidebar h1, .elem", {
+//       x: 600,
+//       stagger: 1,
+//       ease: "expo.ease"
+//     })
+//     .from(".box", {
+//       opacity: 0
+//     });
+// }
 
 
 
@@ -129,7 +129,7 @@ let scrollTween = gsap.to(sections, {
 
 function m(){
     ScrollTrigger.matchMedia({
-        "(max-width:768px)":()=>{                                                                                                                                                                                           
+        "(max-width:991px)":()=>{                                                                                                                                                                                           
             let triggers = ScrollTrigger.getAll();
     triggers.forEach( trigger => {			
       trigger.kill();
