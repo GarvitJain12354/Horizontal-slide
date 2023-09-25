@@ -182,7 +182,7 @@ img {
 }
 .slides:nth-child(2) .swiper:nth-child(2) {
   width: fit-content;
-  height: 10%;
+  height: 20%;
   position: absolute;
   top: 30%;
   left: 8%;
@@ -192,6 +192,9 @@ img {
 }
 .slides:nth-child(2) .swiper:nth-child(2) h1 {
   font-size: 4.038vw;
+  flex-wrap: wrap;
+  /* background-color: red; */
+  width: 70%;
 }
 .slides:nth-child(2) .swiper:nth-child(3) {
   width: 35vw;
@@ -209,6 +212,10 @@ img {
   top: 68%;
   left: 8%;
   z-index: 7;
+}
+#frameless {
+  object-fit: cover;
+  height: 150%;
 }
 .slides:nth-child(2) .swiper:nth-child(3) .swiper-slide {
   display: flex;
@@ -319,7 +326,7 @@ button:hover a {
 }
 .slides:nth-child(2) .swiper:nth-child(4) .swiper-slide img {
   width: 100%;
-  height: 150%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 
@@ -920,6 +927,16 @@ button::after {
   display: none;
 }
 @media only screen and (width: 1024px) {
+  .blackside {
+    display: none;
+  }
+  .slides:nth-child(3) .col8 img {
+    height: 20vw;
+    width: 20vw;
+  }
+  .col8 {
+    flex-wrap: wrap;
+  }
   .s1 .black-box {
     height: 50%;
     width: 50%;
@@ -930,6 +947,13 @@ button::after {
   }
   .sidebar {
     overflow-x: unset;
+    justify-content: space-around;
+  }
+  .box1 {
+    align-items: flex-start;
+  }
+  .slides:nth-last-child(1) > h3 {
+    font-size: 2vw;
   }
   .slides:nth-child(2) .swiper:nth-child(4) .swiper-slide img {
     width: 100%;
@@ -960,18 +984,6 @@ button::after {
   .elem .sec:nth-child(1) {
     width: 30%;
   }
-  /* .slides:nth-child(1) > h1{
-    left: 30%;
-  }
-  .slides:nth-child(1) .img h1{
-    left: -71%;
-  } */
-  /* .black h1{
-    right: -35%;
-  } */
-  /* .slides:nth-child(2) > h1{
-    right: -23%;
-  } */
 
   .s1 .black-box img {
     margin-left: -12vw;
@@ -999,132 +1011,60 @@ button::after {
     display: none;
   }
 }
-@media only screen and (width: 768px) {
-  button::after {
-    display: none;
-  }
-  .sidebar {
-    overflow-x: unset;
-  }
-  .s1 .black-box {
-    height: 50%;
-    width: 50%;
-  }
-  .slides:nth-child(3) img {
-    height: 7rem;
-    width: 7rem;
-  }
-  .elem .sec:nth-child(1) img {
-    height: 5vw;
-  }
-  .s1 .black-box img {
-    margin-left: -12vw;
-  }
-  .box1 {
-    margin-right: 3vw;
-  }
-  .box1 p {
-    width: 90%;
-  }
-  .s2 img {
-    width: 20vw;
-    height: 12vw;
-  }
-  .blackbar img {
-    width: 60vw !important;
-  }
-  .right {
-    width: 60%;
-  }
-  .box p {
-    font-size: 0.8vw;
-  }
-  .box h4 {
-    font-size: 4vw !important;
-  }
-  .b1 img {
-    height: 10vw;
-  }
-  .b1 {
-    width: 30%;
-  }
-  .elem {
-    width: 95%;
-  }
-
-}
-@media only screen and (width: 820px) {
-  .slides{
-    height: 80rem  !important;
-  }
-  button::after {
-    display: none;
-  }
-  .sidebar {
-    overflow-x: unset;
-  }
-  .slides:nth-child(3) img {
-    height: 10rem;
-    width: 10rem;
-  }
-  .s1 .black-box {
-    height: 60%;
-    width: 70%;
-  }
-  .box1 {
-    margin-right: 0vw;
-  }
-  .black-box img {
-    margin-left: 0vw;
-  }
-  .s2 {
-    width: 100%;
-  }
-  .imgc {
-    width: 30vw;
-  }
-  .s2 img {
-    height: 70%;
-  }
-  .blackbar img {
-    height: 100vh;
-    width: 40vw;
-  }
-  .box {
-    width: 40%;
-    padding: 0rem;
-    height: 10%;
-  }
-  .elem .sec:nth-child(1) {
-    width: 30%;
-  }
-  .slides:nth-child(2) .swiper:nth-child(5) {
-    top: 60%;
-  }
-  .slides:nth-child(2) .swiper:nth-child(2) {
-    top: 40%;
-  }
-  .slides:nth-child(2) .swiper:nth-child(4) .swiper-slide img {
-    height: 100%;
-  }
-  .slides:nth-child(2) .swiper:nth-child(4) {
-    width: 40%;
-    right: 15%;
-    height: 60%;
-  }
-}
 
 @media (max-width: 991px) {
+  #main h1 {
+    font-size: 5vw !important;
+    text-align: center;
+  }
+  #main h3,
+  h4 {
+    font-size: 3c !important;
+  }
+  #main p {
+    font-size: 4vw !important;
+  }
+  #main button a {
+    font-size: 2vw !important;
+  }
+  #main .slides:nth-last-child(1) > h3 {
+    font-size: 2vw !important;
+  }
+  .slides:nth-child(2) .swiper:nth-child(2) h1 {
+    width: fit-content;
+    text-align: left !important;
+  }
+  #main .slides:nth-child(2) .swiper:nth-child(2) h1 {
+    font-size: 6vw !important;
+  }
+  .black h1 {
+    display: none;
+  }
+  #main #mobilet {
+    position: absolute;
+    top:2%;
+    right: 0%;
+    color: black;
+    font-weight: 100;
+    font-family: aller-light;
+    width: 100%;
+  }
+
   .p {
     left: 5%;
-    bottom: 2%;
+    bottom: 5%;
   }
   .sidebar {
     overflow-x: unset;
   }
   .arrow {
-    bottom: 2%;
+    bottom: 5%;
   }
+  /* #frameles{
+    height: 250%;
+    background-color: red;
+    object-fit:cover ;
+  } */
   button::after {
     display: none;
   }
@@ -1140,7 +1080,7 @@ button::after {
   }
   #nav {
     flex-direction: row;
-    padding: 0 3vw;
+    padding: 0 2rem;
     overflow: hidden;
   }
   .first {
@@ -1200,7 +1140,7 @@ button::after {
   }
   .blackbar img {
     transform: translateX(0vw);
-    height: 90vw;
+    height: 90%;
     width: 70vw;
   }
   .box a {
@@ -1208,12 +1148,6 @@ button::after {
   }
   .b1 img {
     height: 7vw;
-  }
-  .box h4 {
-    font-size: 4vw;
-  }
-  .box p {
-    font-size: 2vw;
   }
 
   .white {
@@ -1265,14 +1199,39 @@ button::after {
 
   .slides:nth-child(1) > #mobtext {
     opacity: 1;
-    font-size:3rem;
+    font-size: 7.5vw !important;
     width: 80%;
     white-space: wrap;
     position: absolute;
-    bottom: 10%;
+    bottom: 30%;
     left: 50%;
     transform: translate(-50%, 0%);
     text-align: left;
+    color: #fff;
+    z-index: 999;
+  }
+  .img img{
+    width: 100%;
+  }
+  #main #mobimage {
+    opacity: 1;
+    font-size: 7vw !important;
+    width: 20rem;
+    white-space: wrap;
+    position: absolute;
+    bottom: 14rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: left;
+    color: white;
+    z-index: 99999999999;
+    /* display: none; */
+  }
+  .slides:nth-child(1) .img .slide-text {
+    display: none;
+  }
+  .wmobile {
+    display: initial;
   }
   .slides:nth-child(1) {
     align-items: flex-start !important;
@@ -1280,7 +1239,7 @@ button::after {
   }
   .slides:nth-child(1) .img {
     width: 100%;
-    height: 65vh;
+    height: 50vh;
   }
   .slides:nth-child(1) .svg {
     position: absolute;
@@ -1305,22 +1264,22 @@ button::after {
   }
   .black {
     width: 100%;
-    top: 34%;
+    top: 38%;
     height: 50vh;
     left: 0%;
     transform: translate(0%, 0%);
   }
-
+  
   .slides:nth-child(2) .swiper:nth-child(4) {
-    height: 68vh;
+    height: 50vh;
     width: 80vw;
-    top: 27%;
+    top: 38%;
     left: 50% !important;
     transform: translate(-50%, 0%) !important;
     pointer-events: none;
   }
   .slides:nth-child(2) .swiper:nth-child(2) {
-    top: 2%;
+    top: 13%;
   }
   .slides:nth-child(2) .swiper:nth-child(2) h1 {
     font-size: 12vw;
@@ -1328,7 +1287,7 @@ button::after {
   .slides:nth-child(2) .swiper:nth-child(3) {
     width: 90vw;
     height: 20vw;
-    top: 15%;
+    top: 20%;
   }
   .slides:nth-child(2) .swiper:nth-child(4) img {
     filter: drop-shadow(0 10px 10px transparent);
@@ -1337,7 +1296,7 @@ button::after {
     right: 5%;
   }
   .slides:nth-child(2) .swiper:nth-child(5) {
-    top: 25%;
+    top: 30%;
     white-space: nowrap;
     background-color: #fff;
     width: fit-content;
@@ -1356,7 +1315,7 @@ button::after {
     margin-top: 60vh;
     padding: 2rem 0;
   }
-  .sidebar h1{
+  .sidebar h1 {
     font-size: 6rem;
   }
   .sidebar .elem {
@@ -1505,59 +1464,86 @@ button::after {
   .b1 {
     margin-top: 0.3rem;
   }
-  .right{
+  .right {
     gap: 8rem;
     background-color: white;
   }
   .elem h3 {
-  font-size: 4vw;
+    font-size: 4vw;
   }
-  .sidebar .elem{
+  .sidebar .elem {
     width: 100%;
-
   }
-  .elem .sec:nth-child(1) img{
+  .elem .sec:nth-child(1) img {
     height: 5vw;
   }
+
+  .slides:nth-child(1) .img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+  }
+  .slides:nth-child(2) {
+    height: 100vh;
+  }
 }
-@media (max-width: 768px){
- .slides{
-  height: 52rem;
- }
- #nav{
-  height: 8vh;
- }
- .slides:nth-child(1) > #mobtext {
-  opacity: 1;
-  font-size: 1.8rem;
-  width: 20rem;}
+
+@media (max-width: 768px) {
+  #main h1 {
+    font-size: 10vw !important;
+    text-align: center;
+  }
+  #main h3,
+  h4 {
+    font-size: 5vw !important;
+  }
+  #main p {
+    font-size: 3vw !important;
+  }
+  #main button a {
+    font-size: 3vw !important;
+  }
+  #main .slides:nth-child(2) .swiper:nth-child(2) h1 {
+    font-size: 7vw !important;
+  }
+  #main .slides:nth-last-child(1) > h3{
+    font-size: 3vw !important;
+  }
+  .elem .sec:nth-child(1) {
+    width: 20%;
+  }
+  .elem .sec:nth-child(1) img {
+    height: 7vw;
+  }
+  .slides {
+    height: 50rem;
+  }
+  .slides:nth-child(1) {
+    height: 100vh;
+  }
+  #nav {
+    height: 8vh;
+  }
+
+  .slides:nth-child(1) > #mobtext {
+    opacity: 1;
+    font-size: 1.8rem;
+    width: 20rem;
+  }
   .slides:nth-child(2) .swiper:nth-child(3) {
     width: 90vw;
     height: 30vw;
-    top: 10%;
+    top: 13%;
   }
-  .right{
-    gap: .3rem;
+  .right {
+    gap: 3rem;
+    padding: 2rem 0rem;
   }
-  .box h4 {
-    font-size: 6vw;
-  }
-  .box p {
-    font-size: 3vw;
-  }
+
   .box {
-    width: 100%;
-    padding: 1rem;
-  }
-  .slides:nth-child(5) {
-    margin-top: 280vw;
-  }
-  .box1 h1 {
-    font-size: 10vw;
-  }
-  .box1 p {
-    text-align: center;
-    font-size: 0.8rem;
+    width: 80%;
+    padding: 0rem;
   }
   .slides:nth-last-child(1) {
     margin-top: 2rem;
@@ -1565,37 +1551,80 @@ button::after {
   }
   .elem h3 {
     font-size: 1.4rem;
-    }
-    .sidebar .elem{
-      width: 80%;
-  
-    }  
-    .slidemob {
-      height: 23rem;
-      width: 100%;
-      /* background-color: red; */
-      position: relative;
-      z-index: 9999;
-      display: initial;
-    }
-    .sidebar h1{
-      font-size: 3rem;
-    }
-    .slides:nth-child(1) .img {
-      width: 100%;
-      height: 50vh;
-    }
+  }
+  .sidebar .elem {
+    width: 80%;
+  }
+
+  .slides:nth-child(5) {
+    margin-top: 280vw;
+  }
+  .sidebar {
+    margin-top: 100vh;
+  }
+  .p{
+    bottom: 0%;
+  }
+  .arrow{
+    bottom: 0%;
+  }
 }
+
+@media (max-width: 500px) {
+  .right {
+    gap: 0.5rem;
+    padding: 2rem 0rem;
+  }
+  .blackfotter {
+    height: 38rem;
+  }
+  .slides:nth-child(3) > h1 {
+    margin-top: -80vw;
+  }
+  .sidebar {
+    margin-top: 0vh;
+  }
+  .slidemob {
+    height: 20rem;
+    width: 100%;
+    /* background-color: red; */
+    position: relative;
+    z-index: 9999;
+    display: initial;
+  }
+  .slides:nth-child(5) {
+    margin-top: 215vw;
+  }
+.black{
+  top: 45%;
+}
+.slides:nth-child(2) .swiper:nth-child(4){
+  top: 45%;
+}
+.slides:nth-child(2) .swiper:nth-child(5){
+  top: 35%;
+}
+.slides:nth-child(2) .swiper:nth-child(2){
+  top: 18%;
+}
+.slides:nth-child(2) .swiper:nth-child(3){
+  top: 25%;
+}
+#main #mobilet{
+  top: 7%;
+}
+}
+
 @media only screen and (width: 768px) {
   button::after {
     display: none;
   }
   .p {
     left: 5%;
-    bottom: 12%;
+    bottom: 5%;
   }
   .arrow {
-    bottom: 12%;
+    bottom: 5%;
   }
   .slides {
     height: 70rem;
@@ -1610,9 +1639,6 @@ button::after {
   .slides:nth-child(2) .swiper:nth-child(3) {
     top: 15%;
   }
-  .slides:nth-child(5) {
-    margin-top: 220vw;
-  }
   .box1 p {
     font-size: 1.2rem;
   }
@@ -1620,7 +1646,7 @@ button::after {
     height: 30vw;
   }
   .slides:nth-child(2) .swiper:nth-child(4) {
-    top: 27.5%;
+    top: 38%;
   }
   .slides:nth-child(2) .swiper:nth-child(4) .swiper-slide img {
     width: 100%;
@@ -1629,14 +1655,12 @@ button::after {
   .b1 {
     margin-top: 1rem;
   }
-  .slides:nth-child(1) > #mobtext{
+  .slides:nth-child(1) > #mobtext {
     font-size: 2.5rem;
     width: 80%;
   }
-  .slides:nth-child(1) .img{
-    height: 70vh;
-  }
-  .slidemob{
+ 
+  .slidemob {
     width: 60%;
   }
 }
@@ -1646,5 +1670,52 @@ button::after {
   }
   .slides:nth-child(5) {
     margin-top: 250vw;
+  }
+}
+@media only screen and (width: 820px){
+  #main h1 {
+    font-size: 8vw !important;
+  }
+  #main h3,
+  h4 {
+    font-size: 4vw !important;
+  }
+  #main p {
+    font-size: 2.5vw !important;
+  }
+  #main button a {
+    font-size: 2.5vw !important;
+  }
+
+  .right {
+    gap: 0rem;
+  }
+  .sidebar .elem {
+    padding: 2rem;
+  }
+  .elem p {
+    font-size: 2vw;
+  }
+  .elem button a {
+    font-size: 3vw;
+  }
+  .elem .sec:nth-child(1) {
+    width: 20%;
+  }
+  .elem .sec:nth-child(1) img {
+    height: 7vw;
+  }
+
+  .slides:nth-child(5) {
+    margin-top: 225vw;
+  }
+  .sidebar {
+    margin-top: 85vh;
+  }
+  .slides:nth-child(3) > h1 {
+    font-size: 6rem;
+  }
+  .slides:nth-child(3) > h1 {
+    font-size: 12vw !important;
   }
 }
