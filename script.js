@@ -37,11 +37,10 @@ if (window.innerWidth >= 991) {
 
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
-  document.querySelector("#desk").addEventListener("click",function(){
-    locoScroll.scrollTo('#main')
-  })
-
-} 
+  document.querySelector("#desk").addEventListener("click", function () {
+    locoScroll.scrollTo("#main");
+  });
+}
 // if (window.innerWidth === 1024) {
 //   var tl = gsap.timeline({
 //     scrollTrigger: {
@@ -89,102 +88,93 @@ if (window.innerWidth >= 991) {
 //       opacity: 0
 //     });
 // }
+else {
+  // document.querySelector("#mob").addEventListener("click", function () {
+  //   const page1Element = document.querySelector("#page1");
 
+  //   if (page1Element) {
+  //     page1Element.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // });
 
-
-else{
-  document.querySelector("#mob").addEventListener("click",function(){
-    const page1Element = document.querySelector("#page1");
-
-    if (page1Element) {
-      page1Element.scrollIntoView({ behavior: "smooth" });
-    }
-  })
 }
 
-document.querySelector("#mob").addEventListener("click",function(){
-  const page1Element = document.querySelector("#page1");
+// document.querySelector("#mob").addEventListener("click", function () {
+//   const page1Element = document.querySelector("#page1");
 
-  if (page1Element) {
-    page1Element.scrollIntoView({ behavior: "smooth" });
-  }
-})
+//   if (page1Element) {
+//     page1Element.scrollIntoView({ behavior: "smooth" });
+//   }
+// });
 
-// section horizontal scroll 
-function sceoll(){
+// section horizontal scroll
+function scrollpage() {
   let sections = gsap.utils.toArray(".slides");
 
-let scrollTween = gsap.to(sections, {
+  let scrollTween = gsap.to(sections, {
     xPercent: -100 * (sections.length - 1),
     ease: "none", // <-- IMPORTANT!
     scrollTrigger: {
       trigger: ".section",
       pin: true,
-      scroller:"#main",
+      scroller: "#main",
       scrub: 0.1,
       //snap: directionalSnap(1 / (sections.length - 1)),
-      end: "+=3000"
-    }
+      end: "+=3000",
+    },
   });
 
-function m(){
+  function m() {
     ScrollTrigger.matchMedia({
-        "(max-width:991px)":()=>{                                                                                                                                                                                           
-            let triggers = ScrollTrigger.getAll();
-    triggers.forEach( trigger => {			
-      trigger.kill();
+      "(max-width:991px)": () => {
+        let triggers = ScrollTrigger.getAll();
+        triggers.forEach((trigger) => {
+          trigger.kill();
+        });
+      },
     });
-        }
-      })
-}
+  }
 
-  window.addEventListener("resize",m())
-  window.addEventListener("mousemove",m())
+  window.addEventListener("resize", m());
+  window.addEventListener("mousemove", m());
 }
-sceoll()
-// section1 svg rotatiomn 
-function rotate(){
-  gsap.to(".svg",{
-    scrollTrigger:{
-      trigger:".slides:nth-child(1) ",
-      scrub:3,
+scrollpage();
+// section1 svg rotatiomn
+function rotate() {
+  gsap.to(".svg", {
+    scrollTrigger: {
+      trigger: ".slides:nth-child(1) ",
+      scrub: 3,
       start: "bottom 98%%",
       end: "center 10%",
-      scroller:"#main"
+      scroller: "#main",
     },
-    rotate:"180deg"
-  })  
-  
-}
-rotate()
-// section1 swiper
-function slide1(){
-
-  var swiper = new Swiper(".mySwiper", {
-
-    centeredSlides: true,
-    loop:true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-     
-    },
-  
+    rotate: "180deg",
   });
 }
-slide1()
-
-// section2 swiper
-function slide2(){
-  var swiper = new Swiper(".swiper-1", {
-    direction: "vertical",
-    loop:true,
-   
-  
+rotate();
+// section1 swiper
+function slide1() {
+  var swiper = new Swiper(".mySwiper", {
+    centeredSlides: true,
+    loop: true,
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
-     
+    },
+  });
+}
+slide1();
+
+// section2 swiper
+function slide2() {
+  var swiper = new Swiper("#main .swiper-1", {
+    direction: "vertical",
+    loop: true,
+
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
     },
     navigation: {
       nextEl: "#right",
@@ -193,17 +183,15 @@ function slide2(){
     pagination: {
       el: ".swiper-pagination-fraction",
       type: "fraction",
-    }
+    },
   });
-  var swiper = new Swiper(".swiper-2", {
- 
+  var swiper = new Swiper("#main .swiper-2", {
     centeredSlides: true,
-    loop:true,
-  
+    loop: true,
+
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
-     
     },
     navigation: {
       nextEl: "#right",
@@ -212,21 +200,25 @@ function slide2(){
     pagination: {
       el: ".swiper-pagination",
       type: "progressbar",
-    }
+    },
   });
 }
-slide2()
+slide2();
 
 function slidethird() {
   var clutter = "";
   var imgPop = document.querySelector("#imgpop");
-  
-  document.querySelectorAll(".slides:nth-child(3) img").forEach(function (elem) {
-    elem.addEventListener("click", function () {
-      console.log(elem.getAttribute("data-img"));
-      imgPop.style.display = "flex"
-      // document.querySelector("#main").style.pointerEvents = "none"
-      clutter = `  <div class="cent" style="background-image: url(${elem.getAttribute("data-img")});">
+
+  document
+    .querySelectorAll(".slides:nth-child(3) img")
+    .forEach(function (elem) {
+      elem.addEventListener("click", function () {
+        console.log(elem.getAttribute("data-img"));
+        imgPop.style.display = "flex";
+        // document.querySelector("#main").style.pointerEvents = "none"
+        clutter = `  <div class="cent" style="background-image: url(${elem.getAttribute(
+          "data-img"
+        )});">
       <div id="cross">
         <i class="ri-close-circle-fill"></i>
       </div>
@@ -242,18 +234,16 @@ function slidethird() {
       </div>
     </div>`;
 
-      imgPop.innerHTML = clutter;
-      
-      // Add an event listener to the "cross" element to close the container
-      var cross = document.querySelector("#cross");
-      cross.addEventListener("click", function () {
-        imgPop.style.display = "none";
-      // document.querySelector("#main").style.pointerEvents = "all"
+        imgPop.innerHTML = clutter;
 
+        // Add an event listener to the "cross" element to close the container
+        var cross = document.querySelector("#cross");
+        cross.addEventListener("click", function () {
+          imgPop.style.display = "none";
+          // document.querySelector("#main").style.pointerEvents = "all"
+        });
       });
     });
-  });
-
 
   var swiper6 = new Swiper(".swiper-6", {
     grabCursor: true,
@@ -277,7 +267,7 @@ function slidethird() {
       },
     },
   });
-  
+
   var swiper7 = new Swiper(".swiper-7", {
     grabCursor: true,
     loop: true,
@@ -325,3 +315,116 @@ function slidethird() {
 }
 
 slidethird();
+
+
+var flag = 0
+document.querySelector(".menu").addEventListener("click",()=>{
+  if(flag === 0){
+    gsap.to("#line1",{
+      transform:"rotate(48deg) translateY(5px)"
+    })
+    gsap.to("#line2",{
+      transform:"rotate(-48deg) translateY(-12px) translateX(5px)"
+    })
+    var tl = gsap.timeline()
+    tl.to("#navigation",{
+      clipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+      duration:.5,
+      
+    })
+    tl.from("#navigation a",{
+      opacity:0,
+      y:20,
+      stagger:.2,
+      onComplete:()=>{
+        flag = 1
+      }
+    })
+  }
+  else{
+    gsap.to("#line1",{
+      transform:"rotate(0deg) translateY(0px)"
+    })
+    gsap.to("#line2",{
+      transform:"rotate(0deg) translateY(0px) translateX(0px)"
+    })
+    var tl = gsap.timeline()
+    tl.to("#navigation a",{
+      opacity:0,
+      y:-20
+    })
+    tl.to("#navigation",{
+      width:"0%",
+      clipPath:"polygon(0 0, 0 0, 0 100%, 0% 100%)",
+      duration:.5,
+      onComplete:()=>{
+        gsap.to("#navigation",{
+          width:"100%"
+        })
+        gsap.to("#navigation a",{
+          opacity:1,
+          y:20
+        })
+        flag = 0
+      }
+    })
+   
+  }
+
+})
+var value = 0
+document.querySelector(".mobilemenu").addEventListener("click",()=>{
+  if(value === 0){
+    gsap.to("#line1",{
+      transform:"rotate(48deg) translateY(0px)"
+    })
+    gsap.to("#line2",{
+      transform:"rotate(-48deg) translateY(-6px) translateX(5px)"
+    })
+    var tl = gsap.timeline()
+    tl.to("#navigation",{
+      clipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+      duration:.5,
+     
+    })
+    tl.from("#navigation a",{
+      opacity:0,
+      y:20,
+      stagger:.2,
+      onComplete:()=>{
+        value = 1
+      }
+    })
+
+  }
+  else{
+    gsap.to("#line1",{
+      transform:"rotate(0deg) translateY(0px)"
+    })
+    gsap.to("#line2",{
+      transform:"rotate(0deg) translateY(0px) translateX(0px)"
+    })
+    var tl = gsap.timeline()
+    tl.to("#navigation a",{
+      opacity:0,
+      y:-20
+    })
+    tl.to("#navigation",{
+      width:"0%",
+      clipPath:"polygon(0 0, 0 0, 0 100%, 0% 100%)",
+      duration:.5,
+      onComplete:()=>{
+        gsap.to("#navigation",{
+          width:"100%"
+        })
+        gsap.to("#navigation a",{
+          opacity:1,
+          y:20
+        })
+        value = 0
+      }
+    })
+ 
+  }
+
+})
